@@ -121,6 +121,7 @@ function index({ product }) {
             <div className={Style.btnContainer}>
               {product.skus.map((sku, index) => (
                 <button
+                  key={sku.code}
                   className={
                     selectedProduct == index
                       ? `${Style.btn} ${Style.selected}`
