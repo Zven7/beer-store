@@ -1,0 +1,134 @@
+.selected {
+  border: var(--border-active);
+  color: var(--primary-color);
+}
+
+.notSelected {
+  border: var(--border-inactive);
+  color: var(--primary-gray);
+}
+
+.btn {
+  width: 87px;
+  min-height: 31px;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sizeContainer {
+  display: flex;
+  margin-top: 30px;
+}
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.descriptionContainer {
+  margin-top: 30px;
+}
+
+.textPrimary {
+  color: var(--primary-color);
+}
+
+.textBlack {
+  color: var(--primary-black);
+}
+
+.headerText {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.subHeaderText {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.brandContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stockContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.sizeContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnContainer {
+  display: flex;
+  margin: 20px 0px;
+  gap: 15px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 40px 0px;
+}
+
+.bagBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--border-radius);
+  background-color: white;
+  border: var(--border-active);
+  cursor: pointer;
+}
+
+.cartBtn {
+  width: 230px;
+  height: 54px;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  color: white;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.actionContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.mainContainer {
+  padding: var(--padding);
+  min-height: 100vh;
+}
+
+.descriptionText {
+  line-height: 24px;
+  height: 96px;
+}
+
+.readMoreAction {
+  color: var(--primary-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sidesContainer {
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+@media (min-width: 1280px) {
+  .sidesContainer {
+    flex-direction: row;
+    margin-top: 50px;
+  }
+}

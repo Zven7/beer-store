@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  padding: var(--padding);
+  justify-content: space-between;
+}
+
+.burgerBtn {
+  background-color: transparent;
+  border: transparent;
+}
+
+.userPhoto {
+  border-radius: 50%;
+}
+
+@media (min-width: 1280px) {
+  .header {
+    max-width: var(--max-width);
+    margin: auto;
+  }
+}
