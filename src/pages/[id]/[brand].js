@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, use } from "react";
 import products from "public/products";
 import Image from "next/image";
 import axios from "axios";
@@ -6,6 +6,7 @@ import Style from "./detail.module.css";
 import BackButton from "@/components/BackButton";
 import { useRouter } from "next/navigation";
 import { useWindowSize } from "@/hooks";
+import useSWR from "swr";
 
 function index({ product }) {
   const router = useRouter();
@@ -14,6 +15,33 @@ function index({ product }) {
   const [priceState, setPriceState] = useState(product.skus[0].info.price);
   const [isReadMore, setIsReadMore] = useState(false);
   const [imgUrl, setImgUrl] = useState(`/images${product.image}`);
+
+  //id is skus[i].code
+  function fetcher(url) {
+    const res = axios.get(url).then((r) => r.data);
+    return res;
+  }
+
+  let { data, error } = useSWR(
+    `/api/stock-price/${product.skus[selectedProduct].code}`,
+    fetcher,
+    {
+      refreshInterval: 5000,
+    }
+  );
+
+  useEffect(() => {
+    if (!error && data !== undefined) {
+      setStockState(data.value.stock);
+      setPriceState(data.value.price);
+    }
+
+    return () => {
+      setStockState("");
+      setPriceState("");
+    };
+  }, [data]);
+  console.log(data, error, "upd");
 
   const windowSize = useWindowSize();
 

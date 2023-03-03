@@ -1,14 +1,14 @@
 export default {
   10167: {
-    stock: 110,
+    stock: 135,
     price: 2865,
   },
   10166: {
-    stock: 456,
+    stock: 356,
     price: 2640,
   },
   10170: {
-    stock: 6,
+    stock: 16,
     price: 18100,
   },
   10035: {
